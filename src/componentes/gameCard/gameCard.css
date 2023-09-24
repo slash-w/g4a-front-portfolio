@@ -1,0 +1,114 @@
+
+.game-card{
+    background-color: var(--clr-base);
+    position: relative;
+    box-shadow: 3px 3px 5px #000d;
+    max-width: 330px;
+    margin: auto;
+    .gc-thumbnail{
+        .gc-img{
+            aspect-ratio: 460/215;
+            width: 100%;
+            object-fit: contain;
+            object-position: top;
+        }
+        .gc-footer{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1ch 0;
+            margin: 0 0.5ch;
+            .gc-platform{
+                height: 2ch;
+                padding: 0.25ch;
+            }
+        }   
+    }
+    .gc-popup{
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: all 0.2s ease-in-out;
+        width: 100%;
+        height: 100%;
+        z-index: 9;
+        background-color: #000;
+
+        .gc-video{
+            height: 100%;
+            margin: auto;
+        }
+        .gc-more-info{
+            background-color: var(--clr-lgtr);
+            background: linear-gradient(
+                var(--clr-base) 10%,
+                var(--clr-lgtr) 85%);
+            text-align: left;
+
+            .gc-popup-header{
+                height: 4ch;
+                position: relative;
+                text-align: right;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .discounted{
+                    height: 100%;
+                    width: calc(100%);
+                    border-radius: 0;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: large
+                }
+
+                .gc-miniature{
+                    position: relative;
+                    top: -50%;
+                    left: 0;
+                    aspect-ratio: 460/215;
+                    height: 200%;
+                    object-fit: cover;
+
+                    box-shadow:3px 2px 15px #000a;
+                }
+                .gc-popup-prices{
+                    margin-top: 0.5ch;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: end;
+                    height: 100%;
+                    font-size: medium;
+                    padding-right: 1ch;
+                    .price-old{
+                        font-size: 0.75em;
+                        margin: 0;
+                    }
+                }
+            }
+
+            .gc-name{
+                font-size: larger;
+            }
+            .gc-genres{
+                display: flex;
+                font-size: small;
+                gap: 0.5ch;
+                .gc-genre{
+                    background-color: var(--clr-base);
+                    padding: 0.1ch 0.5ch;
+                    border-radius: 5px;
+                }
+            }
+            .gc-vote-text{
+                opacity: 0.6;
+                font-size: small;
+            }
+        }
+    }
+
+    .gc-popup:hover{
+        opacity: 1;
+    }
+}

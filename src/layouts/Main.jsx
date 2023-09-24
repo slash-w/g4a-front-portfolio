@@ -1,11 +1,11 @@
 import React from 'react'
-import NavBar from "../componentes/NavBar"
-import Footer from "../componentes/Footer"
+import NavBar from "../componentes/navbar/NavBar.jsx"
+import Footer from "../componentes/footer/Footer.jsx"
 import { Outlet } from 'react-router-dom'
 
 export default function Main(){
   return (
-    <div className="bg-black p-0 overflow-x-hidden">
+    <div>
     <NavBar/>
     <Outlet/> 
     <Footer/>

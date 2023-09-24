@@ -1,0 +1,33 @@
+.svg-icon{
+    opacity: 0.7;
+    aspect-ratio: 1;
+    height: 2rem;
+}
+.fill-1, .fill-2{
+    transition: all 0.15s ease-in-out;
+    fill: #fff;
+}
+
+.stroke-1, .stroke-2{
+    transition: all 0.15s ease-in-out;
+    stroke: #fff;
+    stroke-width: 3;
+}
+
+.svg-icon:hover{
+    opacity: 1;
+    transform: scale(1.05);
+}
+.svg-icon:hover > .fill-1{
+    fill: #f35c04;
+}
+.svg-icon:hover > .fill-2{
+    fill: #fff;
+}
+
+.svg-icon:hover > .stroke-1{
+    stroke: #f35c04;
+}
+.svg-icon:hover > .stroke-2{
+    stroke: #fff;
+}

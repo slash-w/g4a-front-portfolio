@@ -1,0 +1,188 @@
+:root{
+    --card-height: 400px;
+}
+
+button{
+    cursor: pointer;
+}
+
+.featured-container, .featured-container > *{
+    box-sizing: content-box;
+}
+
+.featured-card, .featured-card *{
+    transition: all 0.25s ease-in;
+}
+
+.featured-container{
+    padding-top: calc(var(--card-height)*0.1);
+}
+
+.featured-card{
+    perspective: 100rem;
+    height: var(--card-height);
+    aspect-ratio: 460/215;
+    transform-style: preserve-3d;
+    display: flex;
+    align-items: end;
+    position: relative;
+    
+    /*background*/
+    .featured-bg-image{
+        transform-origin: 100% 40%;
+        width: 100%;
+        height: var(--card-height);
+        position: absolute;
+        z-index: -2;
+        object-fit: cover;
+        border-radius: 5px;
+        box-shadow: 0px 5px 1rem #000a;
+    }
+
+    /*hover info*/
+    .featured-game-info-container{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        align-items: end;
+        position: relative;
+        overflow: hidden;
+        padding-top: 5%;
+        text-align: left;
+    }
+    .featured-game-info{
+        opacity: 0;
+        text-shadow: 4px 2px 5px #000;
+        margin: 1ch 3ch;
+        width: 60%;
+    }
+    .featured-description{
+        margin-bottom: 1ch;
+        
+    }
+
+    .featured-png-image{
+        height: calc(var(--card-height)*1.1);
+        object-fit: contain;
+        position: absolute;
+        right:0%;
+        transform: translateY(100%);
+        z-index: -1;
+        opacity: 0;
+    }
+
+    /*buttons*/
+
+    .featured-btn-buyNow{
+        border: none;
+        padding: 1rem 3rem;
+        border-radius: 5px;
+        font-weight: 500;
+        background: #fff;
+        color: #151515;
+        transition: all 0.1s ease-in-out;
+    }
+    .featured-btn-wishlist{
+        border: none;
+        background: none;
+        color: #fff;
+        text-shadow: 2px 2px 5px #151515;
+        display: inline-block;
+        transition: all 0.1s ease-in;
+        .featured-plus-svg{
+            height: 2ch;
+            vertical-align: middle;
+            display: inline-block;
+            margin: 0 0.5ch 0 1.5ch;
+        }
+        .featured-plus-border{
+            fill: #151515;
+            stroke: #fff;
+            stroke-width: 8;
+            transition: all 0.1s ease-in;
+        }
+        .featured-plus-sign{
+            stroke: #fff;
+            stroke-width: 8;
+        }
+        .featured-btn-txt{
+            line-height: 175%;
+            vertical-align: middle;
+        }
+    }
+}
+
+.featured-card:hover{
+    .featured-bg-image{
+        transform: translateZ(calc(var(--card-height)*-0.15)) rotateX(10deg);
+        filter: brightness(40%);
+        box-shadow: 0 1rem 1rem #000a;
+    }
+    .featured-game-info{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    .featured-png-image{
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+.featured-btn-buyNow:hover{
+    background-color: var(--clr-rmrk);
+    color: #fff;
+    transform: scale(0.95);
+}
+
+.featured-btn-wishlist:hover{
+    transform: scale(0.95);
+    .featured-plus-border{
+        stroke: var(--clr-rmrk);
+    }
+}
+
+
+/* side game container */
+.featured-games-container{
+    height: var(--card-height);
+    width: 100%;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 1ch;
+    box-sizing: border-box;
+    padding: 0 1ch;
+    
+    .featured-game-side{
+        height: calc((var(--card-height)/4) - 1ch);
+        display: flex;
+        align-items: center;
+        border-radius: 10px;
+        transition: all 0.1s ease-in-out;
+        text-align: left;
+        .ft-slide-img{
+            box-sizing: border-box;
+            height: 100%;
+            border-radius: 10px;
+            margin-right: 5px;
+            box-shadow: 3px 3px 10px #151515;
+        }
+    }
+}
+
+
+.featured-games-container::-webkit-scrollbar {
+    width: 10px;
+}
+.featured-games-container::-webkit-scrollbar-thumb{
+    background: #444;
+    border-radius: 5rem;
+}
+.featured-games-container::-webkit-scrollbar-thumb:hover{
+    background: var(--clr-rmrk);
+    border-radius: 5rem;
+}
+.featured-games-container::-webkit-scrollbar-track {
+    background-color: #252525;
+    border-radius: 10px;
+  }

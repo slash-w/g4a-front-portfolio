@@ -1,0 +1,74 @@
+.slide-carousel{
+    width: 100%;
+}
+
+.slider-legend{
+    text-align: left;
+    font-size: 1.2rem;
+}
+
+.slide-header{
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider-btns{
+    display: flex;
+    gap: 1ch;
+    .slider-btn{
+        height: 2ch;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        border: 1px solid white;
+        .slider-btn-icon{
+            height: 1rem;
+            margin: auto;
+        }
+    }
+
+    .slider-prev{
+        rotate: 180deg;
+    }
+}
+
+.slide-container{
+    display: flex;
+    max-height: 14rem;
+    padding-bottom: 1.5ch;
+    overflow: hidden;
+    position: relative;
+    align-items: flex-start;
+    gap:1ch;
+    
+}
+
+.slide-card{
+    min-width: calc(25%  - 3ch);
+    flex-basis: calc(25% - 3ch);    
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1ch;
+    border-radius: 5px;
+    transition: 
+        transform 0.5s ease-in-out,
+        background 0.15s ease-in-out;
+    padding: 1ch;
+}
+
+.slide-img{
+    width: 20rem;
+    aspect-ratio: 460/215;
+    
+}
+.slide-name{
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.slide-prices{
+    font-size: small;
+}

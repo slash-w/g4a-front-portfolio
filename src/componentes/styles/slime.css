@@ -61,7 +61,7 @@
 }
 
 html{
-    background-color: #223;
+    background-color: #151515;
 }
 
 .my-body{
@@ -367,7 +367,7 @@ html{
 
     aspect-ratio: 1;
     background-image: 
-    radial-gradient(#2230, #223 70%),
+    radial-gradient(#1110, #151515 70%),
     url(https://i.ibb.co/k3WJBW0/grass.png);
 
     /*repeating-conic-gradient(from 45deg, #223 0deg 90deg, #446 90deg 180deg);*/

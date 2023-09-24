@@ -66,7 +66,7 @@ export default function Register() {
       });
     }
   };
-  
+
   const onSuccess = async (response) => {
     try {
       const dataGoogle = {
@@ -84,7 +84,7 @@ export default function Register() {
         icon: 'success',
         button: 'OK',
       });
-  
+
       console.log('Successful registration:', responseFromAPI.data);
       navigate('/verifyAccount');
     } catch (error) {
@@ -108,7 +108,7 @@ export default function Register() {
     }
     gapi.load("client:auth2", start);
   });
-  
+
 
   useEffect(() => {
     const storedEmail = localStorage.getItem('email');
@@ -132,44 +132,44 @@ export default function Register() {
 
   return (
     <main className="flex w-full h-screen items-center justify-center bg-[#111827]">
-    <div className="flex flex-wrap flex-col justify-center items-center w-screen h-screen " >
-      <Sidebar />
-      <div className="flex flex-row justify-center items-center bg-[#080C13] rounded-lg py-4 px-12 w-3/5">
-      <div className="flex flex-col w-full items-center justify-center">
-      <h2 className='my-4  text-center text-[30px] flex-wrap font-bold text-[#EBEBEC]'>WELCOME <span className='text-amber-300'>GAMER!</span></h2>
-      <p className='text-center text-[15px] flex-wrap font-bold text-[#EBEBEC] tracking-[0.8px]'>G4A is waiting for you...</p>
-      <img className='my-8 rounded-lg' src="/public/Captura de pantalla (101).png" alt="" />
-      </div>
-      <div>
-        <form className="flex flex-col items-start m-2 sm:m-0 space-y-3">
-          <label className="font-bold ml-5 text-amber-300" htmlFor="email">Email</label>
-          <input className="border-2 w-full p-0 md:p-1 lg:p-3 border-[rgba(31,31,31,0.50)] rounded-[5px] bg-zinc-800 hover:bg-zinc-700 text-[#FAFCFC]" type="email" id="email" name="email" value={email} placeholder='@' onChange={handleEmailChange} required />
+      <div className="flex flex-wrap flex-col justify-center items-center w-screen h-screen " >
+        <Sidebar />
+        <div className="flex flex-row justify-center items-center bg-[#080C13] rounded-lg py-4 px-12 w-3/5">
+          <div className="flex flex-col w-full items-center justify-center">
+            <h2 className='my-4  text-center text-[30px] flex-wrap font-bold text-[#EBEBEC]'>WELCOME <span className='text-amber-300'>GAMER!</span></h2>
+            <p className='text-center text-[15px] flex-wrap font-bold text-[#EBEBEC] tracking-[0.8px]'>G4A is waiting for you...</p>
+            <img className='my-8 rounded-lg' src="/public/Captura de pantalla (101).png" alt="" />
+          </div>
+          <div>
+            <form className="flex flex-col items-start m-2 sm:m-0 space-y-3">
+              <label className="font-bold ml-5 text-amber-300" htmlFor="email">Email</label>
+              <input className="border-2 w-full p-0 md:p-1 lg:p-3 border-[rgba(31,31,31,0.50)] rounded-[5px] bg-zinc-800 hover:bg-zinc-700 text-[#FAFCFC]" type="email" id="email" name="email" value={email} placeholder='@' onChange={handleEmailChange} required />
 
-          <label className="font-bold ml-5 text-amber-300" htmlFor="photo">Photo</label>
-          <input className="border-2 w-full p-0 md:p-1 lg:p-3 border-[rgba(31,31,31,0.50)] rounded-[5px] bg-zinc-800 hover:bg-zinc-700 text-[#FAFCFC]" type="text" id="photo" name="photo" value={photo} placeholder='📷' onChange={handlePhotoChange} />
+              <label className="font-bold ml-5 text-amber-300" htmlFor="photo">Photo</label>
+              <input className="border-2 w-full p-0 md:p-1 lg:p-3 border-[rgba(31,31,31,0.50)] rounded-[5px] bg-zinc-800 hover:bg-zinc-700 text-[#FAFCFC]" type="text" id="photo" name="photo" value={photo} placeholder='📷' onChange={handlePhotoChange} />
 
-          <label className="font-bold ml-5 text-amber-300" htmlFor="password">Password</label>
-          <input className="border-2 w-full p-0 md:p-1 lg:p-3 border-[rgba(31,31,31,0.50)] rounded-[5px] bg-zinc-800 hover:bg-zinc-700 text-[#FAFCFC]" type="password" id="password" name="password" placeholder='🔒' value={password} onChange={handlePasswordChange} required />
+              <label className="font-bold ml-5 text-amber-300" htmlFor="password">Password</label>
+              <input className="border-2 w-full p-0 md:p-1 lg:p-3 border-[rgba(31,31,31,0.50)] rounded-[5px] bg-zinc-800 hover:bg-zinc-700 text-[#FAFCFC]" type="password" id="password" name="password" placeholder='🔒' value={password} onChange={handlePasswordChange} required />
 
 
-          <Link to={"/home"} onClick={handleRegisterClick} className="flex w-[70vw] md:w-[30vw] h-12 flex-col items-center justify-center shrink-0 rounded-[5px] hover:bg-zinc-950 border border-solid border-amber-300 bg-gradient-to-r from-amber-400 to-amber-700 transition-colors duration-500 hover:from-amber-400 hover:to-amber-600 text-[#FAFCFC] text-sm not-italic font-bold leading-[normal] tracking-[0.7px]" type="button">Register</Link>
-            <GoogleLogin
-              clientId={clientID}
-              render={renderProps => (
-                <button className="w-[70vw] md:w-[30vw] h-12 shrink-0 border rounded-[5px] hover:bg-zinc-950  border-solid border-white flex justify-center items-center" onClick={renderProps.onClick} disabled={renderProps.disabled}>
-                  <img src="/public/Google.png" className="w-6 h-6 shrink-0" />
-                <p className="ms-2 text-[#FAFCFC] text-center text-sm not-italic font-bold leading-[normal] tracking-[0.7px]">Register with Google</p></button>
-              )}
-              onSuccess={onSuccess}
-              onFailure={onFailure}
-              cookiePolicy={'single_host_origin'}
-            />,
-        </form>
-        <p className='text-sm not-italic font-medium leading-[normal] md:text-base text-[#FAFCFC]'>Already have an account? <span className="cursor-pointer text-lg text-amber-400 hover:text-amber-300">Log in</span></p>
-        <p className='text-sm not-italic font-medium leading-[normal] md:text-base text-[#FAFCFC]'>Go back to <Link to={"/home"} className="cursor-pointer text-lg text-amber-400 hover:text-amber-300">Home page</Link></p>
+              <Link to={"/"} onClick={handleRegisterClick} className="flex w-[70vw] md:w-[30vw] h-12 flex-col items-center justify-center shrink-0 rounded-[5px] hover:bg-zinc-950 border border-solid border-amber-300 bg-gradient-to-r from-amber-400 to-amber-700 transition-colors duration-500 hover:from-amber-400 hover:to-amber-600 text-[#FAFCFC] text-sm not-italic font-bold leading-[normal] tracking-[0.7px]" type="button">Register</Link>
+              <GoogleLogin
+                clientId={clientID}
+                render={renderProps => (
+                  <button className="w-[70vw] md:w-[30vw] h-12 shrink-0 border rounded-[5px] hover:bg-zinc-950  border-solid border-white flex justify-center items-center" onClick={renderProps.onClick} disabled={renderProps.disabled}>
+                    <img src="/public/Google.png" className="w-6 h-6 shrink-0" />
+                    <p className="ms-2 text-[#FAFCFC] text-center text-sm not-italic font-bold leading-[normal] tracking-[0.7px]">Register with Google</p></button>
+                )}
+                onSuccess={onSuccess}
+                onFailure={onFailure}
+                cookiePolicy={'single_host_origin'}
+              />,
+            </form>
+            <p className='text-sm not-italic font-medium leading-[normal] md:text-base text-[#FAFCFC]'>Already have an account? <span className="cursor-pointer text-lg text-amber-400 hover:text-amber-300">Log in</span></p>
+            <p className='text-sm not-italic font-medium leading-[normal] md:text-base text-[#FAFCFC]'>Go back to <Link to={"/"} className="cursor-pointer text-lg text-amber-400 hover:text-amber-300">Home page</Link></p>
+          </div>
         </div>
       </div>
-    </div>
     </main>
   );
 }

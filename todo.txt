@@ -1,0 +1,19 @@
+*{
+    resoluciones chicas
+    native
+}
+
+featured carrousel necesita Link -> details
+
+agregar funcionalidad searchbar (->localhost + querys)
+dar funcionalidad boton wishlist
+
+terminar de estilizar las cards en games
+estilizar Games (carrousel? agregar sliders?)
+estilizar Details + arreglar comentarios (que muestre dinamicamente)
+
+arreglar carrito + estilizar
+arreglar admin + estiliar
+
+crear page wishlist
+

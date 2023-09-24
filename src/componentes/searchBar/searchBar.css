@@ -1,0 +1,81 @@
+.searchbar{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    gap: 3ch;
+    position: relative;
+}
+
+/* Style the search container */
+.search-container {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+    background-color: #252525;
+    border-radius: 5px;
+  }
+  
+  /* Style the search input field */
+  .search-input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    background-color: #252525;
+    border-right: 2px solid #151515;
+  }
+  
+  /* Style the search button */
+  .search-btn {
+    border-radius: 0 5px 5px 0;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  /* Add some hover effect to the .search-btn */
+  .search-btn:hover {
+    background-color: var(--clr-rmrk);
+  }
+  
+  .search-categories{
+    display: flex;
+    align-items: center;
+    gap: 1ch;
+    position: relative;
+    .display-arrow{
+        height: 1rem;
+        transition: all 0.15s ease-in-out;
+    }
+  }
+
+
+.sb-anchor{
+  position: relative;
+}
+
+.sb-categories{
+  background-color: #252525;
+  grid-template-columns: repeat(3, 13ch);
+  position: absolute;
+  top: -2ch;
+  left: -2ch;
+  z-index: 99;
+}
+
+.sb-label{
+  display: flex;
+  gap: 0.5ch;
+  width: 100%;
+  padding: 0 0.5ch;
+  text-shadow: 3px 3px 5px #151515;
+}
+
+.btn-sb-cat{
+  padding: 0.5rem;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+
+  
+}
